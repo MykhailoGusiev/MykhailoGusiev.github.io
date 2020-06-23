@@ -77,4 +77,7 @@ footer {
     background-color: $footer-bg;
     color: $footer-text;
     padding: 20px 0;
+    p {
+        line-height: 1.2;
+    }
 }
