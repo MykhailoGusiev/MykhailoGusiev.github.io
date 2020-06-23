@@ -1,6 +1,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import "_reset";
 
+$text-block-bg: #6FA8DC;
+$information-bg: #CFE2F3;
+$infromation-text: #A01CFD;
+$footer-bg: #666666;
+$footer-text: #EEEEEE;
+
 header {
     h1 {
         font-size: 32px;
@@ -11,7 +17,7 @@ header {
 }
 
 .text-block {
-    background-color: #6FA8DC;
+    background-color: $text-block-bg;
     padding: 20px 0;
     h2 {
         text-align: center;
@@ -46,13 +52,14 @@ header {
 }
 
 .information {
-    background-color: #CFE2F3;
+    background-color: $information-bg;
+    padding: 20px 0;
     img {
         display: block;
         margin: 0 auto;
     }
     &__wrapper {
-        color: #A01CFD;
+        color: $infromation-text;
         font-weight: bold;
         padding: 5px 5px 10px 5px;
         display: flex;
@@ -61,7 +68,7 @@ header {
 }
 
 footer {
-    background-color: #666666;
-    color: #EEEEEEEE;
-    padding: 5px;
+    background-color: $footer-bg;
+    color: $footer-text;
+    padding: 20px 0;
 }

@@ -1,11 +1,11 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // Require  html-webpack-plugin plugin
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: __dirname + "/src/app/index.js", // webpack entry point. Module to start building dependency graph
+  entry: __dirname + "/src/app/index.js",
   output: {
-    path: __dirname + '/dist', // Folder to store generated bundle
-    filename: 'bundle.js',  // Name of generated bundle after build
-    publicPath: '/' // public URL of the output directory when referenced in a browser
+    path: __dirname + '/dist',
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -19,13 +19,13 @@ module.exports = {
         {
           test: /\.(scss)$/,
           use: [{
-            loader: 'style-loader', // inject CSS to page
+            loader: 'style-loader',
           }, {
-            loader: 'css-loader', // translates CSS into CommonJS modules
+            loader: 'css-loader',
           }, {
-            loader: 'postcss-loader', // Run post css actions
+            loader: 'postcss-loader',
             options: {
-              plugins: function () { // post css plugins, can be exported to postcss.config.js
+              plugins: function () {
                 return [
                   require('precss'),
                   require('autoprefixer')
@@ -33,19 +33,19 @@ module.exports = {
               }
             }
           }, {
-            loader: 'sass-loader' // compiles Sass to CSS
+            loader: 'sass-loader'
           }]
         },
     ]
   },
-  plugins: [  // Array of plugins to apply to build chunk
+  plugins: [
       new HtmlWebpackPlugin({
           template: __dirname + "/src/public/index.html",
           inject: 'body'
       })
   ],
-  devServer: {  // configuration for webpack-dev-server
-      contentBase: './src/public',  //source of static assets
-      port: 7700, // port to run dev-server
+  devServer: {
+      contentBase: './src/public',
+      port: 7700,
   } 
 };
